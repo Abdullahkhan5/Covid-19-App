@@ -1,0 +1,275 @@
+/* html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  } */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page-header {
+    padding: 5%;
+    background-color: #EFF0F1;
+}
+
+.header-content > h1{
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.row {
+    height: 100%;
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+}
+
+.introduction > h5{
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+.introduction>p {
+    padding: 4% 0 0;
+}
+
+.introduction-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-logo{
+    width: 30vw;
+}
+
+.logo {
+    padding: 0 0 5%;
+    width: 15%;
+}
+
+.screening-btn a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.screening-btn {
+    margin-top: 5%;
+}
+
+.page-body {
+    padding: 5%;
+}
+
+.virus-logo {
+    padding-bottom: 5%;
+
+}
+
+.body-content {
+    padding: 3% 0;
+}
+
+.info-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-text-para {
+    line-height: 3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.carousel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-info-button {
+    width: 100%;
+}
+
+.more-info-carousel {
+    background-color: grey;
+}
+
+.screen-test {
+    position: relative;
+    height: 3%;
+    background-color: #EFF0F1;
+}
+
+.screen-test>img {
+    position: absolute;
+    z-index: 1;
+}
+
+
+.screen-test-info {
+    background-color: #FFFFFF;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 0 15%;
+    align-items: center;
+    height: 100%;
+}
+
+.screen-test-info > p{
+    margin: 0 0 5% 0;
+}
+
+.screen-test-info>a {
+    width: 45%;
+}
+
+.covid-info {
+    background-color: #FFFFFF;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    padding: 0 15%;
+}
+
+.covid-info > h1{
+    margin: 0 0 2% 0;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.covid-info > p{
+    margin: 0 0 5% 0;
+}
+
+.results {
+    position: relative;
+    background-color: #FFFFFF;
+    margin: 10% auto;
+    width: 100%;
+    display: none;
+    padding: 0 15%;
+}
+
+.results>h1 {
+    margin: 50px 0 20px 0;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.who {
+    text-decoration: none;
+    cursor: pointer;
+    color: #212529;
+}
+
+.results>ol>li {
+    padding: 10px 0;
+}
+
+.fever-logo {
+    margin: 50px auto;
+}
+
+.fever-btn {
+    margin: 5px auto;
+    /* width: 45%; */
+}
+
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0;
+    height: 100%;
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 0;
+    pointer-events: none;
+    height: 100%;
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+
+/* .item-list li {
+    font-size: 14px;
+    margin-bottom: 22px;
+    line-height: 18px;
+  }
+
+.item-list p{
+    font-size: 14px;
+} */
+
+.item-list li{
+    margin: 5% 0;
+} 
+
+.qAndA{
+    display: none;
+}
+
+.qAndA > h1{
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.active{
+    display: block;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+@media (max-width: 1050px) {
+    .header-content > h1 {
+        font-size: 2rem;
+    }
+    .introduction > h5{
+        font-weight: 300;
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 768px) {
+    .mobile-logo{
+        width: 100%;
+    }
+}

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bootstrap Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <link href="./styles.css" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="./index.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid page-header">
+    <div class='container'>
+      <img src="./images/logo.png" class='logo'>
+      <div class='row header-content'>
+        <h1>COVID-19</h1>
+        <h1>Screening Tool</h1>
+        <div class="col-12 col-md-10 introduction">
+          <h5>Use this self-assessment tool to help determine whether you needed to be tested for COVID-19.</h5>
+          <h5>You can complete this assessment for yourself on or the behalf of someone else, if they are not
+            able.</h5>
+        </div>
+        <div class="col-12 col-md-2 introduction-img">
+          <img src="./images/covid19screen.png" class='mobile-logo'>
+        </div>
+      </div>
+      <button class='btn btn-primary w-100 screening-btn' type='button' data-bs-toggle="modal"
+        data-bs-target="#screeningModal">Start
+        Screening</button>
+    </div>
+  </div>
+  <div class="container-fluid page-body">
+    <div class='container'>
+      <h1>More Information</h1>
+      <div class='row body-content'>
+        <div class="info-img col-4 col-md-2">
+          <img src="./images/virus.png" class="img-fluid virus-logo">
+        </div>
+        <div class="info-text col-6 col-md-8">
+          <h5>What is Covid-19?</h5>
+          <p class="info-text-para">Coronavirus disease 2019 (COVID-19) is a contagious disease caused by a
+            virus, the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The first known case
+            was identified in Wuhan, China, in December 2019.The disease quickly spread worldwide, resulting
+            in the COVID-19 pandemic.</p>
+        </div>
+
+        <div class="carousel-button col-2 col-md-2">
+          <a type='button' data-bs-toggle="modal" data-bs-target="#covid-19-Modal"><img src="./images/icon-arrow.png"
+              class="img-fluid">
+          </a>
+        </div>
+      </div>
+      <hr>
+      <div class='row body-content'>
+        <div class="info-img col-4 col-md-2">
+          <img src="./images/symptoms.png" class="img-fluid virus-logo">
+        </div>
+        <div class="info-text col-6 col-md-8">
+          <h5>What are its symptoms?</h5>
+          <p class="info-text-para">Symptoms of COVID‑19 are variable, but often include fever,cough,
+            headache,fatigue, breathing difficulties, loss of smell, and loss of taste.Symptoms may begin
+            one to fourteen days after exposure to the virus. At least a third of people who are infected do
+            not develop noticeable symptoms. </p>
+        </div>
+        <div class="carousel-button col-2 col-md-2">
+          <a type='button' data-bs-toggle="modal" data-bs-target="#covid-19-symptoms-Modal"><img
+              src="./images/icon-arrow.png" class="img-fluid">
+          </a>
+        </div>
+      </div>
+      <hr>
+      <div class='row body-content'>
+        <div class="info-img col-4 col-md-2">
+          <img src="./images/prevent.png" class="img-fluid virus-logo">
+        </div>
+        <div class="info-text col-6 col-md-8">
+          <h5>How can you prevent it?</h5>
+          <p class="info-text-para">Those diagnosed with COVID‑19 or who believe they may be infected are
+            advised by the CDC to stay home except to get medical care, call ahead before visiting a
+            healthcare provider, wear a face mask before entering the healthcare provider's office and when
+            in any room or vehicle with another person, cover coughs and sneezes with a tissue, regularly
+            wash hands with soap and water and avoid sharing personal household items.</p>
+        </div>
+        <div class="carousel-button col-2 col-md-2">
+          <a type='button' data-bs-toggle="modal" data-bs-target="#covid-19-preventions-Modal"><img
+              src="./images/icon-arrow.png" class="img-fluid">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Modals -->
+
+  <!-- Screening Modal -->
+  <div class="modal fade" id="screeningModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid page-header">
+            <div class="container">
+              <div class="screen-test">
+                <img src="./images/logo.png" class="logo">
+              </div>
+            </div>
+          </div>
+          <div class="screen-test-info">
+            <div class="qAndA q1 active">
+              <h1>Do you have Fever above 101.4?</h1>
+              <img src="./images/1.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+            <div class="qAndA q2">
+              <h1>Do you have Cough - (Dry Cough)?</h1>
+              <img src="./images/2.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+            <div class="qAndA q3">
+              <h1>Do you have Cough - (Wet Cough)?</h1>
+              <img src="./images/3.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+            <div class="qAndA q4">
+              <h1>Do you have Shortness of Breath?</h1>
+              <img src="./images/4.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+            <div class="qAndA q5">
+              <h1>Do you have Flu?</h1>
+              <img src="./images/5.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+            <div class="qAndA q6">
+              <h1>Have you travelled abroad in the last 15 days?</h1>
+              <img src="./images/6.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+            <div class="qAndA q7">
+              <h1>Have you been in contact with any person who has recently travelled internationally?</h1>
+              <img src="./images/7.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+            <div class="qAndA q8">
+              <h1>Do you have chest infection?</h1>
+              <img src="./images/8.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+            <div class="qAndA q9">
+              <h1>Is your age more than or equal to 60 years of age?</h1>
+              <img src="./images/9.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+            <div class="qAndA q10">
+              <h1>Due to Co-morbidities, do you take any medicine?</h1>
+              <img src="./images/10.png" class="img-fluid fever-logo">
+              <button onClick="saveAnswers(1)" class='btn btn-primary fever-btn w-100' type='button'>Yes I Do</button>
+              <button onClick="saveAnswers(2)" class='btn btn-primary fever-btn w-100' type='button'>No I Don't</button>
+            </div>
+          </div>
+          <div class="results r1">
+            <h1>High Probability of Corona</h1>
+            <ol>
+              <li>Isolate from others</li>
+              <li>Rest and Take Care</li>
+              <li>Call Work Health Providers</li>
+              <li>Monitor Symptoms</li>
+              <li>Talk to someone about Testing</li>
+              <li>Follow Govt Instructions</li>
+            </ol>
+            <p><strong>Note:</strong> As of now your answers suggest that you may need testing.If anthing changes, take
+              the questionniare again.</p>
+          </div>
+          <div class="results r2">
+            <h1>Suspected for Corona!</h1>
+            <ol>
+              <li>Isolate from others</li>
+              <li>Rest and Take Care</li>
+              <li>Call Work Health Providers</li>
+              <li>Monitor Symptoms</li>
+              <li>Talk to someone about Testing</li>
+              <li>Follow Govt Instructions</li>
+            </ol>
+            <p><strong>Note:</strong> As of now your answers suggest that you may need testing.If anthing changes, take
+              the questionniare again.</p>
+          </div>
+          <div class="results r3">
+            <h1>You are all Good!</h1>
+            <ol>
+              <li>No Test Needed At This Time</li>
+              <li>Maintain Social Distance</li>
+              <li>Avoid groups of people and keep six feet apart from anyone who’s not part of the household. Especially avoid those showing symptoms.</li>
+            </ol>
+            <p><strong>Note:</strong> As of now, their answers suggest they do not need to get tested. If anything changes, take the questionnaire again.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Covid-19 Modal -->
+  <div class="modal fade" id="covid-19-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid page-header">
+            <div class="container">
+              <div class="screen-test">
+                <img src="./images/logo.png" class="logo">
+              </div>
+            </div>
+          </div>
+          <div class="covid-info">
+            <h1>Covid-19</h1>
+            <p>Coronavirus disease 2019 (COVID-19) is a contagious disease caused by a
+              virus, the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The first known case
+              was identified in Wuhan, China, in December 2019.The disease quickly spread worldwide, resulting
+              in the COVID-19 pandemic.</p>
+            <h4>Symptoms</h4>
+            <p>Symptoms of COVID‑19 are variable, but often include fever,cough, headache,fatigue, breathing
+              difficulties, loss of smell, and loss of taste.Symptoms may begin one to fourteen days after exposure to
+              the virus. At least a third of people who are infected do not develop noticeable symptoms.</p>
+            <h4>How it Spreads</h4>
+            <p>COVID‑19 transmits when people breathe air contaminated by droplets and small airborne particles
+              containing the virus. The risk of breathing these is highest when people are in close proximity, but they
+              can be inhaled over longer distances, particularly indoors. Transmission can also occur if splashed or
+              sprayed with contaminated fluids in the eyes, nose or mouth, and, rarely, via contaminated surfaces.
+              People remain contagious for up to 20 days, and can spread the virus even if they do not develop symptoms.
+            </p>
+            <p>Learn more on <a class="who"
+                href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">who.int</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Symptoms -->
+  <div class="modal fade" id="covid-19-symptoms-Modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid page-header">
+            <div class="container">
+              <div class="screen-test">
+                <img src="./images/logo.png" class="logo">
+              </div>
+            </div>
+          </div>
+          <div class="covid-info">
+            <h1>Symptoms</h1>
+            <p>
+              The COVID-19 virus affects different people in different ways.
+              COVID-19 is a respiratory disease and most infected people
+              will develop mild to moderate symptoms and recover without
+              requiring special treatment. People who have underlying
+              medical conditions and those over 60 years old have a higher
+              risk of developing severe disease and death.
+            </p>
+
+            <h5>Common symptoms include:</h5>
+            <ul class="p-0 m-0 list-unstyled item-list">
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/1.png" class="img-fluid" />
+                  </div>
+                  <div class="col-9 my-auto">
+                    Fever and body aches
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/2.png" class="img-fluid" />
+                  </div>
+                  <div class="col-9 my-auto">
+                    Dry Cough
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/tirdeness.png" class="img-fluid" />
+                  </div>
+                  <div class="col-9 my-auto">
+                    Tiredness
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <h5>Other symptoms include:</h5>
+            <ul class="p-0 m-0 list-unstyled item-list">
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/8.png" class="img-fluid" />
+                  </div>
+                  <div class="col-9 my-auto">
+                    Pains and aches
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/thorat.png" class="img-fluid" />
+                  </div>
+                  <div class="col-9 my-auto">
+                    Sore throat
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/4.png" class="img-fluid" />
+                  </div>
+                  <div class="col-9 my-auto">
+                    Shortness of breath
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/intestine.png" class="img-fluid" />
+                  </div>
+                  <div class="col-9 my-auto">
+                    Very few people will report diarrhoea, nausea or a runny
+                    nose.
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <p>
+              People with mild symptoms who are otherwise healthy should
+              self-isolate and contact their medical provider or a COVID-19
+              information line for advice on testing and referral. People
+              with fever, cough or difficulty breathing should call their
+              doctor and seek medical attention.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preventions -->
+  <div class="modal fade" id="covid-19-preventions-Modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid page-header">
+            <div class="container">
+              <div class="screen-test">
+                <img src="./images/logo.png" class="logo">
+              </div>
+            </div>
+          </div>
+          <div class="covid-info">
+            <h1>Prevention</h1>
+            <p>
+              There's currently no vaccine to prevent coronavirus disease
+              (COVID-19). You can protect yourself and help prevent
+              spreading the virus to others if you do the following:
+            </p>
+
+            <ul class="p-0 m-0 list-unstyled item-list">
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/hands.png" class="img-fluid">
+                  </div>
+                  <div class="col-9 my-auto">
+                    Wash your hands regularly with soap and water, or clean
+                    them with alcohol-based hand rub.
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/distance.png" class="img-fluid">
+                  </div>
+                  <div class="col-9 my-auto">
+                    Maintain at least 1 metre distance between you and
+                    people coughing or sneezing.
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/away.png" class="img-fluid">
+                  </div>
+                  <div class="col-9 my-auto">
+                    To help prevent infections, keep your hands away from
+                    your eyes, nose, and mouth.
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/cover.png" class="img-fluid">
+                  </div>
+                  <div class="col-9 my-auto">
+                    Cover your mouth and nose when coughing or sneezing.
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/home.png" class="img-fluid">
+                  </div>
+                  <div class="col-9 my-auto">
+                    Stay home if you feel unwell. Staying home right now
+                    isn't just about keeping you and your family safe—it's
+                    about helping to save the lives of others.
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/lungs.png" class="img-fluid">
+                  </div>
+                  <div class="col-9 my-auto">
+                    Refrain from smoking and other activities that weaken
+                    the lungs.
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-3 my-auto">
+                    <img src="./images/physica.png" class="img-fluid">
+                  </div>
+                  <div class="col-9 my-auto">
+                    Practice physical distancing by avoiding unnecessary
+                    travel and staying away from large groups of people.
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+
+</html>
