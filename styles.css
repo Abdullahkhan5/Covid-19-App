@@ -199,6 +199,7 @@ body {
     position: relative;
     flex: 1 1 auto;
     padding: 0;
+    height: 100%;
     max-height: 100%;
     overflow-y: auto;
 }
@@ -237,7 +238,7 @@ body {
 
 .qAndA > h1{
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .active{
@@ -253,7 +254,16 @@ body {
 }
 @media (max-width: 1050px) {
     .header-content > h1 {
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+    .qAndA > h1{
+    font-size: 2rem;
+    }
+    .results>h1 {
+    font-size: 2rem;
+    }
+    .covid-info > h1{
+    font-size: 2rem;
     }
     .introduction > h5{
         font-weight: 300;
